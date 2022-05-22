@@ -20,21 +20,21 @@ export class MediaReport {
   @Column({ type: 'bigint' })
   cost: number;
 
-  @Column({ type: 'bigint' })
+  @Column({ type: 'bigint', name: 'conv_value' })
   convValue: number;
 
-  @Column({ type: 'bigint' })
+  @Column({ type: 'numeric' })
   ctr: number;
 
-  @Column({ type: 'bigint' })
+  @Column({ type: 'numeric' })
   cvr: number;
 
-  @Column({ type: 'bigint' })
+  @Column({ type: 'numeric' })
   cpc: number;
 
-  @Column({ type: 'bigint' })
+  @Column({ type: 'numeric' })
   cpa: number;
 
-  @Column({ type: 'bigint' })
+  @Column({ type: 'numeric' })
   roas: number;
 }

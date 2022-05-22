@@ -17,16 +17,16 @@ export class Advertising {
   @Column({ type: 'varchar' })
   status: string;
 
-  @Column({ type: 'date' })
+  @Column({ type: 'date', name: 'start_date' })
   startDate: Date;
 
-  @Column({ type: 'date' })
+  @Column({ type: 'date', name: 'end_date', nullable: true })
   endDate: Date;
 
   @Column({ type: 'bigint' })
   cost: number;
 
-  @Column({ type: 'bigint' })
+  @Column({ type: 'bigint', name: 'conv_value' })
   convValue: number;
 
   @Column({ type: 'bigint' })

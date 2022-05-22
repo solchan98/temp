@@ -17,22 +17,22 @@ export class DailyReport {
   @Column({ type: 'bigint' })
   conv: number;
 
-  @Column({ type: 'bigint' })
+  @Column({ type: 'bigint', name: 'conv_value' })
   convValue: number;
 
-  @Column({ type: 'bigint' })
+  @Column({ type: 'double precision' })
   ctr: number;
 
-  @Column({ type: 'bigint' })
+  @Column({ type: 'double precision' })
   cvr: number;
 
-  @Column({ type: 'bigint' })
+  @Column({ type: 'double precision' })
   cpc: number;
 
-  @Column({ type: 'bigint' })
+  @Column({ type: 'double precision' })
   cpa: number;
 
-  @Column({ type: 'bigint' })
+  @Column({ type: 'double precision' })
   roas: number;
 
   @Column({ type: 'date' })

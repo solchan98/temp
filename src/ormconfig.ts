@@ -4,12 +4,12 @@ import { DailyReport } from './entities/dailyReport';
 import { MediaReport } from './entities/mediaReport';
 
 const ormConfig: TypeOrmModuleOptions = {
-  type: 'postgres',
-  host: 'localhost',
-  port: 54320,
-  username: 'sol',
-  password: '1234',
-  database: 'madup',
+  type: '',
+  host: '',
+  port: 1234,
+  username: '',
+  password: '',
+  database: '',
   entities: [Advertising, DailyReport, MediaReport],
   synchronize: true,
 };
