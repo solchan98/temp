@@ -16,6 +16,15 @@ export class MediaReportService {
         date: Between(startDate, endDate),
       },
     });
+    this.convertStringToNumber(data);
+    return data;
+  }
+
+  async addData(data) {
+    await this.repository.save(data);
+  }
+
+  convertStringToNumber(data: MediaReport[]) {
     data.forEach((value) => {
       value.imp = Number(value.imp);
       value.click = Number(value.click);
@@ -27,10 +36,5 @@ export class MediaReportService {
       value.cpa = Number(value.cpa);
       value.roas = Number(value.roas);
     });
-    return data;
-  }
-
-  async addData(data) {
-    await this.repository.save(data);
   }
 }

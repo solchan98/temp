@@ -12,7 +12,15 @@ export class AdvertisingService {
 
   async getAdvertisingList(): Promise<any> {
     const data = await this.repository.find();
-    const ads = data.map((value) => {
+    const ads = this.convertDataToResponseType(data);
+    return {
+      count: ads.length,
+      ads,
+    };
+  }
+
+  convertDataToResponseType(data: Advertising[]) {
+    return data.map((value) => {
       return {
         id: Number(value.id),
         adType: value.adType,
@@ -28,10 +36,5 @@ export class AdvertisingService {
         },
       };
     });
-
-    return {
-      count: ads.length,
-      ads,
-    };
   }
 }

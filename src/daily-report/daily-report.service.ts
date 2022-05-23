@@ -16,8 +16,18 @@ export class DailyReportService {
         date: Between(startDate, endDate),
       },
     });
+    const daily = this.convertDataToResponseType(data);
+    return {
+      report: { daily },
+    };
+  }
 
-    const daily = data.map((value) => {
+  async addData(data) {
+    await this.repository.save(data);
+  }
+
+  convertDataToResponseType(data: DailyReport[]) {
+    return data.map((value) => {
       const {
         id,
         imp,
@@ -47,13 +57,5 @@ export class DailyReportService {
         date,
       };
     });
-
-    return {
-      report: { daily },
-    };
-  }
-
-  async addData(data) {
-    await this.repository.save(data);
   }
 }
