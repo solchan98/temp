@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 import { MediaReportService } from './media-report.service';
 
-@Controller('media-report')
+@Controller('/api/v1/media-report')
 export class MediaReportController {
   constructor(private readonly service: MediaReportService) {}
 
